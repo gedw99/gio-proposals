@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Webpush Golang Example</title>
+</head>
+<body>
+  <script>
+    function publishSubscription(subscription) {
+      console.log(JSON.stringify(subscription));
+      var subID = localStorage.getItem('subID');
+      if(!subID){
+        fetch("/api/v1/push/subscribe", {method: 'POST', body: JSON.stringify(subscription)})
+          .then(response => response.json())
+          .then(data => {
+              localStorage.setItem('subID', data);
+              console.log("subcripe", data);
+              subID = data;
+          })
+      } else {
+        console.log("found subscription:", subID);
+      }
+    }
+    function subscribe(vapidPublicKey) {
+      navigator.serviceWorker.ready
+        .then(function(registration) {
+          return registration.pushManager.subscribe({
+            userVisibleOnly: true,
+            applicationServerKey: urlBase64ToUint8Array(vapidPublicKey),
+          });
+        })
+        .then(publishSubscription)
+        .catch(err => console.error(err));
+    }
+
+    function urlBase64ToUint8Array(base64String) {
+      const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
+      const base64 = (base64String + padding)
+        .replace(/\-/g, '+')
+        .replace(/_/g, '/');
+      const rawData = window.atob(base64);
+      return Uint8Array.from([...rawData].map(char => char.charCodeAt(0)));
+    }
+
+    function setup(statusData) {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js');
+        navigator.serviceWorker.ready
+          .then(function(registration) {
+            return registration.pushManager.getSubscription();
+          })
+          .then(function(subscription) {
+            if (!subscription) {
+              subscribe(statusData.vapid_public_key);
+            } else {
+              publishSubscription(subscription);
+            }
+        });
+      }
+    }
+  </script>
+   <script src="/api/v1/status?callback=setup"></script> 
+</body>
+</html>

@@ -20,6 +20,7 @@ build:
 	
 	# cd $(LIB_PATH) && go build -o $(BIN_PATH)/$(BIN_NAME) .
 	cd $(LIB_PATH) && gogio -target js -x -work $(WORK_PATH)  -o $(BIN_PATH)/$(BIN_NAME) .
+	cd $(LIB_PATH) && gogio -target js -o $(BIN_PATH)/$(BIN_NAME) .
 	
 	# copy assets to disk
 	cd $(LIB_PATH) && cp -r *.png $(BIN_PATH)

@@ -1,0 +1,5 @@
+[vapid]
+  public_key = "BL90gGKDLd8sxDSAUgZfjSmHxx_SZM60WWB7zBCywK_VSBM_K0EMibQFUDDJ7Mb1VCRNW8tIthOMSIUQK3Hfqps"
+  private_key = "0fO3aodgY_HKvIqZtpJ8QoqGOAc3qn9TTB-Ta26imkU"
+  subscriber = "example@example.com"
+  ttl = 0

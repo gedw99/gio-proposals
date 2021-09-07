@@ -1,6 +1,23 @@
 # gio-proposals
 
-various notes and code samples for gio proposals
+
+
+
+It’s designed for developers looking to get going with https://gioui.org/ apps fast.
+
+But also for those interested in extending gio too.
+
+## CI
+
+CI builds all the proposal examples and deploys them. 
+
+- This is useful because users can very quickly see a demo of the code they are looking at.
+- Eventually it will host a web, desktop and mobile version of each demo.
+
+
+## idiomatic aspects of gio 
+
+Also I am starting to focus on what the idiomatic aspects of gio project structure as well as useful patterns.
 
 
 ## audio

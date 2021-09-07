@@ -14,19 +14,31 @@ CI builds all the proposal examples and deploys them.
 - This is useful because users can very quickly see a demo of the code they are looking at.
 - Eventually it will host a web, desktop and mobile version of each demo.
 
-
-## idiomatic aspects of gio 
-
 Also I am starting to focus on what the idiomatic aspects of gio project structure as well as useful patterns.
 
+## wesomes
 
-## audio
+List of awesome gio repos...
+
+## udio 
 
 Gio needs a decent audio component. 
 
 Oto v2 looks perfect and reuses a well supported existing golang package.
 
-## db
+## Modularity
+
+Code and patterns for buildng modular gio apps. Typically needed for larger apps.
+
+## Navigation
+
+Gio needs a Navigator to allow paterns like deepinking, sharing, univerlas links.
+
+## Datatable
+
+A Datatable Component is needed. Exenstion of a List Component.
+
+## Db
 
 Gio needs a decent DB with no CGO.
 
@@ -41,6 +53,22 @@ Genji is unique in that it can support schema and no schema approaches and is a 
 There are many ways to manage the network aspects in GIO.
 
 GRPC, NATS, Websockets, http, go-kit, etc, etc
+
+## Notify
+
+In tandan with Navigation Component, allow in app and out of app notifications.
+
+## Pack
+
+Patterns for packing apps for Web, Desktop, Mobile, IOT.
+
+## Scripting
+
+Patterns for using scripting / interpreters withing gio apps.
+
+## SEO
+
+Approach for building Web apps where the app can still be scraped by Google, etc.  
 
 ## Servers
 
@@ -59,3 +87,7 @@ Identity.
 DB and File Storage.
 
 Backup
+
+## Speech
+
+Proposal for how to use Test to Speech and Speech to Text.

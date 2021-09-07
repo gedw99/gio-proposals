@@ -33,7 +33,7 @@ So we have a bus at each level: WASM <--> WASM, Client <--> Server, Server <--> 
 
 Client <--> Server using WS
 https://git.sr.ht/~whereswaldon/pointstar/tree/master/item/client/url.go
-- extend: git remote add origin <URL> git push -u origin main
+- extend: to generic pattern
 
 Server <--> Server && Client <-->Client via the Server bus.
 - NATS BUS with Siot: https://github.com/simpleiot/simpleiot/search?q=nats

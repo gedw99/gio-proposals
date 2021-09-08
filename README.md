@@ -45,6 +45,10 @@ Soon it will support an WASM indexedDB based driver too, and so gain persistance
 
 Genji is unique in that it can support schema and no schema approaches and is a well supported golang package.
 
+## Db Search
+
+Offers global search for gio apps.
+
 ## Networking
 
 There are many ways to manage the network aspects in GIO.

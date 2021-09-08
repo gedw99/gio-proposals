@@ -41,9 +41,10 @@ Server <--> Server && Client <-->Client via the Server bus.
 
 ## Widget gallery
 
-We have some awesome demos in gio examples repo.
 
 Eventually a Widget Gallery running on Web, Desktop and Mobile would be useful for everyone.
+
+The current gio examples could be used.
 
 https://github.com/emilk/egui has a good example of the cooncept.
 

@@ -22,7 +22,7 @@ Flutter Info: https://flutter.dev/docs/development/ui/navigation/url-strategies
 
 Flutter Example:
 
-Web: https://vrouter.dev/
+Web Demo: https://vrouter.dev/
 
 Code: https://github.com/lulupointu/vrouter
 

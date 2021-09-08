@@ -1,24 +1,27 @@
 # GIO DB
 
-Unified DB and file system.
+Gio needs a good developer story for DB and file system.
 
 ## UnifiedDB
 
-In order for GIO devs to have a consistent and first class storage experience targetting the Service worker API's is best way, because its the lowest common denmainator and was designed to allow OflIne first experiences.
+In order for GIO devs to have a consistent and first class storage experience targetting the Service worker API's is best way, because its the lowest common denominator and was designed to allow OfflIne first experiences.
+
+https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 
 Advantages of this are:
 
 - Web, Desktop and Mobile apps would have a base to work from where there are no surprises.
 
-- Offline apps would be handled automatically. Offline editing could be visitted, but is highly related to the way you model your data and if you seperate the Query IO from the Mutation IO to your backend. I could add more here to explains an approach...
+- Offline apps use case would be covered. Offline editing could be visited, but is highly related to the way you model your data and if you seperate the Query IO from the Mutation IO to your backend. I could add more here to explains an approach...
 
-- Some of the GIO packages rely on state, and so they would all just work on all targets.
+- Some of the GIO packages rely on durbale state, and so they would all just work on all targets.
 
-- CLI, GUI, REPL: By using a common DB, it would allow a CLI, GUI and REPL to be built around it.
+- CLI, GUI, REPL tooling is then possibe to be build around it. 
   - This would ignore your golang types, but instead show you the raw data in the DB and File store.
 
-- Bleve based indexing. You can also then update your bleve indexes also locally. The Server is doing the indexing, and so its can send you index updates to then store locally.
-  - Getting the bleve store running inside wasm is a bit too much, so we let the server do it and just send index updates to the clients.
+- Bleve based indexing. You could also have poweful facet search by sniffing mutations. 
+  - If the Server is doing the indexing, it can send you index updates to then store locally. The scorch API could then target the UnifiedDB interface.
+  - Getting the bleve store running inside wasm is also possible. Thats just a matter of targeting the Segment API. See the [Search](#Search) Folder however...
 
 
 ## Example Flow sequences

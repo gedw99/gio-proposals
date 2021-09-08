@@ -1,23 +1,28 @@
 # GIO DB
 
-Gio needs a good developer story for DB and file system.
+Gio needs a good developer story for DB and File system aspects.
 
 ## UnifiedDB
 
-In order for GIO devs to have a consistent and first class storage experience targeting the IndexedDB and caching API, because its the lowest common denominator and was designed to allow OfflIne first experiences.
+Targeting the IndexedDB and caching API of Web Browsers.
+
+The Service Worker API manages some of these aspects like background Sync, etc.
+
+It would not be hard to provide the same semantics for Mobile and Desktop using built tags to get this Unification.
 
 https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 
 Advantages of this are:
 
-- Web, Desktop and Mobile apps would have a base to work from where there are no surprises.
+- Web, Desktop and Mobile apps would have a base to work from where there are no surprises. 
 
 - Offline apps use case would be covered. Offline editing could be visited, but is highly related to the way you model your data and if you seperate the Query IO from the Mutation IO to your backend. I could add more here to explains an approach... IndexedDB access is available within your service worker, where localStorage is not. This does mean you can intercept the network request to the more 'binary' responses and cache them in IDB in the service worker and sort of build a special caching abstraction layer to make managing their caching easier across different browsers.
 
-- Some of the GIO packages rely on durbale state, and so they would all just work on all targets.
+- Some of the GIO packages rely on durable state to function, and so they would all just work on all targets.
 
-- CLI, GUI, REPL tooling is then possibe to be build around it. 
-  - This would ignore your golang types, but instead show you the raw data in the DB and File store.
+- CLI, GUI, REPL tooling is then possibe. This would ignore your golang types, but instead show you the raw data in the DB and File store.
+  - Helps with debugging, as Service worker has race conditions and self manages things and so it can be hard to diagnose what its doing.
+  - Makes it easy to write unit / integration tests that test across all Targets.
 
 
 ## Search
@@ -38,7 +43,7 @@ You can create your own synchronization support by leveraging offline detection 
 
 Add to Home screen.
 
-Works on all desktop and mobiles, giving a simialr experience to an installed app.
+Works on all desktop and mobiles, giving a siialr experience to an installed app.
 
 If the user does this, the background sync and purging works much better. See IOS quirks
 

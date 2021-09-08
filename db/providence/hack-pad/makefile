@@ -1,19 +1,23 @@
 print:
 
-dep-all: dep-hackpadfs dep-hackpad
+all: dep lint test
 
-dep-hackpadfs:
+dep:
 	rm -rf hackpadfs
 	git clone https://github.com/hack-pad/hackpadfs
+	
+### Hackfs 
 
-	# uses github.com/hack-pad/go-indexeddb
+# THis exercises both the FS and DB aspects..
 
-dep-hackpad:
-	# exampel app that needs special golang.
-	rm -rf hackpad
-	git clone https://github.com/hack-pad/hackpad
-
-hackpadfs-test:
+test:
 	cd hackpadfs && $(MAKE) test
-hackpadfs-build:
-	cd hackpadfs && go build .
+lint:
+	cd hackpadfs && $(MAKE) lint
+
+### Demo
+
+demo-repl-run:
+	# This is a repl cli that runs In Web, Desktop and Mobile
+	# Tested in Web and Desktop. Not tested in mobile yet.
+	cd demo && go run .

@@ -62,11 +62,11 @@ For Desktop and Mobile the Manifests need to have the needed items.
 
 ## Providence
 
-Router designed for SPA
+Router designed for SPA 
 
-https://github.com/mitranim/rout is an imperitive router that uses the builder pattern.
+https://github.com/mitranim/rout is an imperitive router that uses the builder pattern. Most routers have a separation between "building" the routes and using the routes. rout doesn't have that. It doesn't "build" routes, it just runs.
 
-JS usage of rout...
+JS usage of rout helps to see its intent ...
 https://github.com/mitranim/imperouter,
-https://github.com/mitranim/prax 
 
+https://github.com/mitranim/prax 

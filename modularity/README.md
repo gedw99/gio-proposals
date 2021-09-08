@@ -41,11 +41,11 @@ Server <--> Server && Client <-->Client via the Server bus.
 
 ## Widget gallery
 
-https://github.com/emilk/egui has a good example
+We have some awesome demos in gio examples repo.
 
-Use the GIO Component widget, and then load up each demo by importing each main.go without the main . Hence the gio examples must be changed to have a cmd to run isolated and a pkg to be called from the component.
-Now we have modularity !!
+Eventually a Widget Gallery running on Web, Desktop and Mobile would be useful for everyone.
 
+https://github.com/emilk/egui has a good example of the cooncept.
 
 dark-theme: 
 ![alt text](https://raw.githubusercontent.com/emilk/egui/master/media/widget_gallery.gif "Logo Title Text 1")
@@ -53,8 +53,4 @@ dark-theme:
 
 light-theme: 
 ![alt text](https://raw.githubusercontent.com/emilk/egui/master/media/light_theme.png "Logo Title Text 1")
-
-
-
-
 

@@ -21,7 +21,7 @@ Advantages of this are:
 
 - Bleve based indexing. You could also have poweful facet search by sniffing mutations. 
   - If the Server is doing the indexing, it can send you index updates to then store locally. The scorch API could then target the UnifiedDB interface.
-  - Getting the bleve store running inside wasm is also possible. Thats just a matter of targeting the Segment API. See the [Search](./.Search) Folder however...
+  - Getting the bleve store running inside wasm is also possible. Thats just a matter of targeting the Segment API. See the [Search](../Search) Folder however...
 
 
 ## Example Flow sequences

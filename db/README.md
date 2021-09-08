@@ -19,9 +19,18 @@ Advantages of this are:
 - CLI, GUI, REPL tooling is then possibe to be build around it. 
   - This would ignore your golang types, but instead show you the raw data in the DB and File store.
 
-- Bleve based indexing. You could also have poweful facet search by sniffing mutations. 
-  - If the Server is doing the indexing, it can send you index updates to then store locally. The scorch API could then target the UnifiedDB interface.
-  - Getting the bleve store running inside wasm is also possible. Thats just a matter of targeting the Segment API. See the [Search](../Search) Folder however...
+
+
+
+## Search
+
+Bleve based indexing. 
+
+You could also have powerful facet search by sniffing mutations.
+
+If the Server is doing the indexing, it can send you index updates to then store locally. The scorch API could then target the UnifiedDB interface.
+
+Getting the bleve store running inside wasm is also possible. Thats just a matter of targeting the Segment API. 
 
 
 ## Example Flow sequences

@@ -96,7 +96,7 @@ When this is done gogio tool should add he flag for compiling via tinygo, so tha
 
 TODO: Add the issues hit. They were minor and to do with Reflection from what i saw.
 
-## Identity
+## Security
 
 STATUS:
 
@@ -104,7 +104,7 @@ STATUS:
 
 Preconditions: 
 
-- NONE
+- NONE, but heavily related to Identity
 
 Description:
 
@@ -117,6 +117,8 @@ AuthZ is where you want to check if a User is has the right to do something usin
 Permissions entends on User is in group chekcng, to also check some data dependency typically. For example, is a user in his group and are the creator of this Order.
 
 Guards are where in the GUI you enforce the checks. This can extend to only showing certain Navigation items ( so hence Component relationship), to anywhere else deeper in the App.
+
+Identity is current broken out because developers need many many ways to do Auth, but then once the user is Authenticated, Authz takes over using the "Cookie" they. SO its loosly coupled by design.
 
 
 

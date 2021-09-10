@@ -1,4 +1,4 @@
-# bluetooth
+# Bluetooth
 
 gio has haptics demo which is a buzzer.
 

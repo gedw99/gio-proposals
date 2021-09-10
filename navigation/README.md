@@ -1,12 +1,20 @@
 # Navigation
 
 
-
 Gio Router ( https://github.com/gioui/gio/tree/main/io/router ) and GIO X Component ( gioui.org/x/component) provide the basis, but we dont have the other things needed to build compelling apps.
 
 The following feature matrix make up the whole of that experience.
 
-**URL Handling**
+Each section below is reasonably ordered in that one cant be done unless the previous one is done.
+
+## Router
+
+STATUS: DONE
+
+Component example ( https://github.com/gioui/gio-example/tree/main/component ) is now broken into a File / Folder per View, allowing developers to use this as a base for larger apps.  Awesome !!
+
+
+## URL Handling
 
 For Web its having URL's map to Pages.
 
@@ -18,15 +26,18 @@ Use cases:
 
 - It allows users to change pages via URL, copy, paste, share an URL with another user so they can go directly to that page.
 
-Flutter Info: https://flutter.dev/docs/development/ui/navigation/url-strategies
+Providence:
 
-Flutter Example:
+- Flutter Info: https://flutter.dev/docs/development/ui/navigation/url-strategies
 
-Web Demo: https://vrouter.dev/
+Examples:
 
-Code: https://github.com/lulupointu/vrouter
+- Web : https://vrouter.dev/
 
-**Deeplinking**
+- Code: https://github.com/lulupointu/vrouter
+
+
+## Deeplinking
 
 This is a Navigation overlay that maps to the Pages inside the app.
 
@@ -40,18 +51,18 @@ Flutter info: https://flutter.dev/docs/development/ui/navigation/deep-linking
 
 Video Demo: https://user-images.githubusercontent.com/53147028/132381138-238ef02a-367d-4f98-aa8a-80a119575dab.MP4
 
-**Universal Links**
+## Universal Links
 
   - If you have a Native version of the App, then it will laod up the Native version. If not it will laod up the Web version. This uses UrlSchemes
   - IOS: https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app
   - Android: https://developer.android.com/training/app-links/deep-linking
 
-**Share**
+## Share
 
 This means we need to share a URI, so that it can then used by the recieving app to load up the thing your sharing.
   - For a Link to a GIO Page to resolve, you need the Deep Link and Univrsal Links working
 
-**Manifests**
+## Manifests
 
 With the above features, you also have a fair bit of configuration required in the Manifests that are particular to each compile target.
 

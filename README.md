@@ -2,6 +2,11 @@
 
 It’s designed for developers looking to get going with https://gioui.org/ apps fast.
 
+Slack discuss:  https://gophers.slack.com/archives/CM87SNCGM
+
+Issues: 
+
+
 But also for those interested in extending gio too.
 
 ## CI

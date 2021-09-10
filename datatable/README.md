@@ -1,11 +1,11 @@
-# datatable
+# Datatable
 
 A Datatable widget is needed.
 
 Exenstion of a List Component.
 
 
-## use cases
+## Use cases
 
 The Master / Detail pattern is where the Master is a List, and the detail is the Form. Many many apps naturally use this pattern.
 

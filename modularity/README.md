@@ -88,13 +88,13 @@ For example, the current Kitchen example is a 3 MB download size with a Time to 
 - Light house checking URL: https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fgioui.org%2Ffiles%2Fwasm%2Fkitchen%2Findex.html
 
 
-We should work towards tinygo compilation, and this should bring the WASM download to approx .3 MB.
+We should work towards tinygo compilation, and this will bring the WASM download size to approx .3 MB, and decrease the Time to Interactive.
 
-The issues hit were not great.
+The blockers were minor and to do with Reflection from what i saw.
 
-When this is done gogio tool should add he flag for compiling via tinygo, so that we can check regressions in CI.
+When this is done gogio tool should add a flag for compiling via tinygo, so that we can check regressions in CI, but also so developers have a choice, as they may also be using some reflection code themsleves ( or other ) that breaks tinygo compilation.
 
-TODO: Add the issues hit. They were minor and to do with Reflection from what i saw.
+TODO: Add the issues hit. 
 
 ## Security
 
@@ -108,17 +108,15 @@ Preconditions:
 
 Description:
 
-Auth, Authz ( user, groups, permissions) and Guards in the GUI ae a cross cutting concern and so part of Modularity, and heavily relatd to Navigation and route checking.
+Auth, Authz ( user, groups, permissions) and Guards in the GUI are a cross cutting concern and so part of Modularity, and heavily relatd to Navigation and route checking.
 
-Auth is very much different for uses, and how they hold a Uses "cookie".
+Auth is very much different for devlopers, and how they hold a Uses "cookie".  Identity is current broken out because developers need many ways to do Auth, but then once the user is Authenticated, Authz takes over using the "Cookie" they. SO its loosly coupled by design.
 
-AuthZ is where you want to check if a User is has the right to do something using the classic "Is a user a mememebr of this group logic.
+AuthZ is where you want to check if a User has the right to do something using the classic "Is a user a member of this group" logic.
 
-Permissions entends on User is in group chekcng, to also check some data dependency typically. For example, is a user in his group and are the creator of this Order.
+Permissions entends on Authz, to also check some data dependency typically. For example, the logic of "is a user in his group and are they the creator of this Order".
 
-Guards are where in the GUI you enforce the checks. This can extend to only showing certain Navigation items ( so hence Component relationship), to anywhere else deeper in the App.
-
-Identity is current broken out because developers need many many ways to do Auth, but then once the user is Authenticated, Authz takes over using the "Cookie" they. SO its loosly coupled by design.
+Guards are where in the GUI you enforce the checks. This can extend to only showing certain Navigation items ( so hence Component relationship ), to anywhere else deeper in the App.
 
 
 

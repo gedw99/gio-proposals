@@ -9,6 +9,9 @@ Typically needed for larger apps.
 - [Pages per folder](#pages-per-folder)
 - [Pages per package](#pages-per-package)
 - [Widget gallery](#widget-gallery)
+- [Tinygo](#tinygo)
+- [Security](#security)
+- [Bus](#bus)
 
 ## Pages per folder
 

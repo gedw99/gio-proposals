@@ -20,7 +20,7 @@ Introduce the abstractions necessary to split an app into several files and pack
 
 Examples:
 
-The current Comonent example ( https://github.com/gioui/gio-example/tree/main/component ) has each "Page" all mashed together in the main.go
+The current Component example ( https://github.com/gioui/gio-example/tree/main/component ) has each "Page" all mashed together in the main.go 
 
 ## Pages per package
 
@@ -67,6 +67,74 @@ dark-theme:
 light-theme: 
 ![alt text](https://raw.githubusercontent.com/emilk/egui/master/media/light_theme.png "Logo Title Text 1")
 
+## Tinygo
+
+STATUS:
+
+- PENDING. Seems very worthwhile.
+
+Preconditions: 
+
+- NONE
+
+Description:
+
+Adoption by many developerent teams is being held back by the WASM download being too large.
+
+For example, the current Kitchen example is a 3 MB download size with a Time to Interactive of 4.3 sconds. 
+
+- Code: https://github.com/gioui/gio-example/tree/main/kitchen
+
+- Light house checking URL: https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fgioui.org%2Ffiles%2Fwasm%2Fkitchen%2Findex.html
+
+
+We should work towards tinygo compilation, and this should bring the WASM download to approx .3 MB.
+
+The issues hit were not great.
+
+When this is done gogio tool should add he flag for compiling via tinygo, so that we can check regressions in CI.
+
+TODO: Add the issues hit. They were minor and to do with Reflection from what i saw.
+
+## Identity
+
+STATUS:
+
+- PENDING. Not decided on design fully..
+
+Preconditions: 
+
+- NONE
+
+Description:
+
+Auth, Authz ( user, groups, permissions) and Guards in the GUI ae a cross cutting concern and so part of Modularity, and heavily relatd to Navigation and route checking.
+
+Auth is very much different for uses, and how they hold a Uses "cookie".
+
+AuthZ is where you want to check if a User is has the right to do something using the classic "Is a user a mememebr of this group logic.
+
+Permissions entends on User is in group chekcng, to also check some data dependency typically. For example, is a user in his group and are the creator of this Order.
+
+Guards are where in the GUI you enforce the checks. This can extend to only showing certain Navigation items ( so hence Component relationship), to anywhere else deeper in the App.
+
+
+
+TODO: 
+
+- We already have an Identity Section, Bit what we need is a Modular approhc so that developers can use any implementation that they want. So work on that.
+
+- The above things are all things you need to do in a GUI and on a Server. We can leverage this. But we have teams of course using GIO with other server technologies, and so be mindful of this.
+
+Providence:
+
+- https://github.com/cerbos/cerbos
+  - Example: https://github.com/cerbos/demo-rest
+    - Auth Check: https://github.com/cerbos/demo-rest/blob/main/service/service.go#L95
+    - Authz and Permissions: https://github.com/cerbos/demo-rest/blob/main/service/service.go#L167
+  - This is a loose coupled design and can be leveraged on the Client and Server or not, which is what we want.
+
+
 
 
 ## Bus
@@ -97,3 +165,5 @@ Its maps to the Web Servcie worker pattern ( https://developer.mozilla.org/en-US
 **Server <--> Server && Client <--> Client** using NATS ( for example ), provides a pattern where by messages can be send between cleints via a server.
 
 - NATS BUS with Siot: https://github.com/simpleiot/simpleiot/search?q=nats
+
+

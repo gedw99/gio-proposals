@@ -20,7 +20,7 @@ Introduce the abstractions necessary to split an app into several files and pack
 
 Examples:
 
-The current Comonent example ( https://github.com/gioui/gio-example/tree/main/x/component ) has each "Page" all mashed together in the main.go
+The current Comonent example ( https://github.com/gioui/gio-example/tree/main/component ) has each "Page" all mashed together in the main.go
 
 ## Pages per package
 
@@ -32,7 +32,8 @@ STATUS:
 Preconditions: 
 
 - [Pages per folder](#pages-per-folder), is DONE.
-- [Naviation with URLS](#navigation-with-urls) is not done.
+- [Naviation: URL handling](../navigation#url-handling) is NOT done.
+
 
 Description:
 

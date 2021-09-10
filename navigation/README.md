@@ -7,14 +7,8 @@ The following feature matrix make up the whole of that experience.
 
 Each section below is reasonably ordered in that one cant be done unless the previous one is done.
 
-## Router
 
-STATUS: DONE
-
-Component example ( https://github.com/gioui/gio-example/tree/main/component ) is now broken into a File / Folder per View, allowing developers to use this as a base for larger apps.  Awesome !!
-
-
-## URL Handling
+## URL handling
 
 For Web its having URL's map to Pages.
 

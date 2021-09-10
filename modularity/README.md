@@ -9,6 +9,7 @@ Typically needed for larger apps.
 - [Pages per folder](#pages-per-folder)
 - [Pages per package](#pages-per-package)
 - [Widget gallery](#widget-gallery)
+- [Responsive](#responsive)
 - [Tinygo](#tinygo)
 - [Security](#security)
 - [Bus](#bus)
@@ -76,13 +77,68 @@ dark-theme:
 light-theme: 
 ![alt text](https://raw.githubusercontent.com/emilk/egui/master/media/light_theme.png "Logo Title Text 1")
 
+
+## Responsive
+
+STATUS:
+
+- PENDING. Seems very worthwhile, but approaches to the best way to do it are not worked out.
+
+Preconditions:
+
+- NONE :)
+
+Description:
+
+A desktop and mobile app needs to change aspects of its layout and bahaviour based on the users screen size.
+
+This is really a cross cutting thing in that it is often called "Responsive Design", but thats only a small aspect to it, in that it cuts across all of GIO, and so thats why its part of the Modularity proposal area.
+
+TODO: I think there are some handlers in gio core for this ? Check how to maps to this proposal.
+
+Examples:
+
+There are many permutations of examples of this- way too many to mention. But the following highlights commonalities that effect everyones apps.
+
+- The Navigation ( aka "Rail" in Materials Design terms: https://material.io/components/navigation-rail) needs to change based on screen size.
+
+  - Video: https://kstatic.googleusercontent.com/files/65115e4274f0fae323a231e4697a04e8be28465d68638f40f1cb32bef51d61f442dd0868e4fac23eaee14d123de32b070e0c59dd291e537d4d9d058d368df514
+
+- The classic Master / Details pattern ( aka "List/Detail view" in Material Design ) of having a List on the left and a form on the right changes.
+
+  - Image: https://lh3.googleusercontent.com/TYXaIIcQr95JavcPFYELW2BSAMCp2JIvfguH_hSwV_isulVHiydKJjSk3rRrhm7wObJHNBYMKdPZIL1zAnyRFJgDwOTIGYT39oPi4VCNTQzONyGRrvPD=w1064-v0
+
+  - Image: https://lh3.googleusercontent.com/giZtnMxeuuVJB_PzeKuyEaFOAmJ7g1IGvgdthAT5fbXbUYcZKguek7xx7oHhbhcOrLXkJwzaRGrkm4aeMcosyEaRymBraXN7_DhZeRofCMsjqV0Vqw=w1064-v0
+
+  - On Mobile, navigation from Master to Detail Page is a full navigation with back button assertion.
+
+  - On Desktop, there is no navigation, and no back button assertion.
+
+  - As highlighted above, this effects the navigation / routing, in that on Desktop a full URL to a Detail page is /Page/Form?id=formID, must be accounted for in that you need to load the Master and Detail Views. On Mobile, you only load the Detail View. One way to handle this is to formalise this such that there are no code changes and the system autoamtically works this out. But it maybe too restrictive. We shoudl design to have a helper function that can be used as needed perhaps.
+
+Conclusions:
+
+The Master / Detail pattern is general enough that any application needs it in general. Be it a Forms based app or a 2D CAD app, and so we need to formalise it at some level.
+
+It also highlights just how cross cuttong it is affecting Navigation and Routing. If we dont address this there will be too many gio wrappers and forks basically. There are already a few.
+
+Aim for a "responsive" package that is reused higher up in Widgets.
+
+Suggest, we start with the Component package and its handling of the Nav Rail with defaults that can be overriden easily but others. That will tease out what needs to be extended in GIO core responsive package.
+
+Suggest we start to then look at the low hanging fruit for List and Form as they are used in so many apps and we have good examples of them that can be embellished with Responsive behaviours.
+
+- List is still being formalised in the gioverse project at https://github.com/gioverse/chat/tree/main/list
+
+- Form is in good shape in Jacks repo at https://git.sr.ht/~jackmordaunt/gio-planet/tree/main/item/form. We should put this package and example into gio repo to get started.
+
 ## Tinygo
 
 STATUS:
 
 - PENDING. Seems very worthwhile.
 
-Preconditions: 
+Preconditions:
 
 - NONE :)
 
@@ -90,12 +146,11 @@ Description:
 
 Adoption by many developerent teams is being held back by the WASM download being too large.
 
-For example, the current Kitchen example is a 3 MB download size with a Time to Interactive of 4.3 sconds. 
+For example, the current Kitchen example is a 3 MB download size with a Time to Interactive of 4.3 sconds.
 
 - Code: https://github.com/gioui/gio-example/tree/main/kitchen
 
 - Light house checking URL: https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fgioui.org%2Ffiles%2Fwasm%2Fkitchen%2Findex.html
-
 
 We should work towards tinygo compilation, and this will bring the WASM download size to approx .3 MB, and decrease the Time to Interactive.
 
@@ -103,7 +158,7 @@ The blockers were minor and to do with Reflection from what i saw.
 
 When this is done gogio tool should add a flag for compiling via tinygo, so that we can check regressions in CI, but also so developers have a choice, as they may also be using some reflection code themsleves ( or other ) that breaks tinygo compilation.
 
-TODO: Add the issues hit. 
+TODO: Add the issues hit.
 
 ## Security
 
@@ -111,7 +166,7 @@ STATUS:
 
 - PENDING. Not decided on design fully..
 
-Preconditions: 
+Preconditions:
 
 - NONE, but heavily related to Identity
 
@@ -127,9 +182,7 @@ Permissions entends on Authz, to also check some data dependency typically. For 
 
 Guards are where in the GUI you enforce the checks. This can extend to only showing certain Navigation items ( so hence Component relationship ), to anywhere else deeper in the App.
 
-
-
-TODO: 
+TODO:
 
 - We already have an Identity Section, Bit what we need is a Modular approhc so that developers can use any implementation that they want. So work on that.
 
@@ -142,9 +195,6 @@ Providence:
     - Auth Check: https://github.com/cerbos/demo-rest/blob/main/service/service.go#L95
     - Authz and Permissions: https://github.com/cerbos/demo-rest/blob/main/service/service.go#L167
   - This is a loose coupled design and can be leveraged on the Client and Server or not, which is what we want.
-
-
-
 
 ## Bus
 

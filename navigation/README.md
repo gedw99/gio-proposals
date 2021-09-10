@@ -9,12 +9,19 @@ Each section below is reasonably ordered in that one cant be done unless the pre
 
 **Table of contents**
 
+- [manifests](#manifests)
 - [URL handling](#url-handling)
 - [Deeplinking](#deeplinking)
 - [Universal Links](#universal-links)
 - [Share](#share)
-- [manifests](#manifests)
 - [Providence](#providence)
+
+## Manifests
+
+With these features, you also have a fair bit of configuration required in the Manifests that are particular to each compile target.
+
+For Web a Service work manifest is needed.
+For Desktop and Mobile the Manifests need to have the needed items.
 
 
 ## URL handling
@@ -65,12 +72,7 @@ Video Demo: https://user-images.githubusercontent.com/53147028/132381138-238ef02
 This means we need to share a URI, so that it can then used by the recieving app to load up the thing your sharing.
   - For a Link to a GIO Page to resolve, you need the Deep Link and Univrsal Links working
 
-## Manifests
 
-With the above features, you also have a fair bit of configuration required in the Manifests that are particular to each compile target.
-
-For Web a Service work manifest is needed.
-For Desktop and Mobile the Manifests need to have the needed items.
 
 
 

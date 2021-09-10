@@ -1,4 +1,4 @@
-# modularity
+# Modularity
 
 Fosucs's on what the idiomatic aspects of gio project structure are as well as useful patterns.
 
@@ -6,7 +6,13 @@ Code and patterns for buildng modular gio apps. Typically needed for larger apps
 
 ## Pages per folder
 
-STATUS: DONE ( PR: https://github.com/gioui/gio-example/commit/82c2219a297cccd13698146ee2eb374faafdbf12 ) 
+STATUS: 
+
+- DONE ( PR: https://github.com/gioui/gio-example/commit/82c2219a297cccd13698146ee2eb374faafdbf12 )
+
+- Implications:
+    - Router Interface: https://github.com/gioui/gio-example/blob/307f4a062c/component/pages/page.go#L14 that other can start using to allow reuse between projects.
+
 
 The current Comonent example ( https://github.com/gioui/gio-example/tree/main/x/component ) has each "Page" all mashed together in the main.go
 
@@ -30,15 +36,64 @@ if abv, ok := view.(AppBarView); ok {
 
 ```
 
-## Pages importable
+## Pages per package
 
-STATUS: NOT YET. Other things are needed first like the Navigator.
+STATUS: 
+
+- Still debating its worth... 
+- At the moment because there is no Navigation package this is not easy to do. Perhaps once the Navigation work package is sorted out it may be possible to do this.
+
+Preconditions: 
+
+- [Pages per folder](#pages-per-folder), is DONE.
+- [Naviation with URLS](#navigation-with-urls) is not done.
+
+Description:
 
 Say you have built a Package that handles all the LoginIn, SignIn, format password GUI and functionality, and you want to reuse it for all your other apps.
 
-At the moment because their is no Navigation package this is nto easy to do. Perhaps once the Navigation work package is sorted out it may be possible to do this.
+
+## Widget gallery
+
+STATUS:
+
+- Seems worthwhile 
+
+Preconditions: 
+
+- [Pages per folder](#pages-per-folder), is DONE.
+- [Pages per package](#pages-per-package) makes it way easier to import other examples.
+
+Description:
+
+Eventually a Widget Gallery running on Web, Desktop and Mobile would be useful for everyone.
+
+The current gio examples could be used. 
+
+Examples:
+
+- https://github.com/emilk/egui has a good example of the concept.
+
+dark-theme: 
+![alt text](https://raw.githubusercontent.com/emilk/egui/master/media/widget_gallery.gif "Logo Title Text 1")
+
+
+light-theme: 
+![alt text](https://raw.githubusercontent.com/emilk/egui/master/media/light_theme.png "Logo Title Text 1")
+
+
 
 ## Bus
+
+STATUS:
+
+- Seems worthwhile 
+
+Preconditions: 
+
+- NOT DECIDED YET
+
+Description:
 
 So we have a bus at each level: Client <--> Client, Client <--> Server, Server <--> Server
 
@@ -56,30 +111,3 @@ Its maps to the Web Servcie worker pattern ( https://developer.mozilla.org/en-US
 **Server <--> Server && Client <--> Client** using NATS ( for example ), provides a pattern where by messages can be send between cleints via a server.
 
 - NATS BUS with Siot: https://github.com/simpleiot/simpleiot/search?q=nats
-
-
-## Widget gallery
-
-Eventually a Widget Gallery running on Web, Desktop and Mobile would be useful for everyone.
-
-Precondition: Pages per folder
-
-[Pages per folder](#pages-per-folder) click
-
-[click on this link](#my-multi-word-header)
-
-Allowing pages to be imported, woudl allow this to be done easily against others repos. We woudl just need to bypass the main.go
-
-The current gio examples could be used.
-
-Examples:
-
-- https://github.com/emilk/egui has a good example of the concept.
-
-dark-theme: 
-![alt text](https://raw.githubusercontent.com/emilk/egui/master/media/widget_gallery.gif "Logo Title Text 1")
-
-
-light-theme: 
-![alt text](https://raw.githubusercontent.com/emilk/egui/master/media/light_theme.png "Logo Title Text 1")
-

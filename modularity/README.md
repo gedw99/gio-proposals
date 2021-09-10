@@ -150,7 +150,7 @@ Providence:
 
 STATUS:
 
-- Seems worthwhile 
+- Seems worthwhile. Needs more work..
 
 Preconditions: 
 
@@ -163,15 +163,23 @@ So we have a bus at each level: Client <--> Client, Client <--> Server, Server <
 **Client <--> Client** may be useful for Modularity in that you can send a message to another package that you have no knowldge of. 
 Its  designed for decoupling of Application to allow reuse and hence Modularity.
 
-Its maps to the Web Servcie worker pattern ( https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage ) and so would compile target agnostics to this feature.
+Its maps to the Web Service worker pattern ( https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage ) and so would provide compile target agnostics to this feature, allowing this bus feature to work cross platform.
 
+Examples:
+- TODO
 
-**Client <--> Server** using various protocols, is designed to provide a generic pattern for Unidirectional messge push  in a decoupled and modular way, allow maximum reuse and developer productivity.  In so doing t woudl provide compile target agnostics to this feature. 
+**Client <--> Server** using various protocols, is designed to provide a generic pattern for Unidirectional messge push in a decoupled and modular way, allowing maximum reuse and developer productivity.  In so doing it would provide compile target agnostics to this feature. 
 
- https://git.sr.ht/~whereswaldon/pointstar/tree/master/item/client/url.go
+Examples:
 
+- https://git.sr.ht/~whereswaldon/pointstar/tree/master/item/client/url.go
 
-**Server <--> Server && Client <--> Client** using NATS ( for example ), provides a pattern where by messages can be send between cleints via a server.
+- https://centrifugal.dev/docs/transports/overview
+  - GRPC, SSE, HTTP Streaming, GRPC
+
+**Server <--> Server && Client <--> Client** using NATS ( for example ), provides a pattern where by messages can be send between clients via a server.
+
+Examples:
 
 - NATS BUS with Siot: https://github.com/simpleiot/simpleiot/search?q=nats
 

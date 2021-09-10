@@ -4,6 +4,12 @@ Fosucs's on what the idiomatic aspects of gio project structure are as well as u
 
 Typically needed for larger apps.
 
+**Table of contents**
+
+- [Pages per folder](#pages-per-folder)
+- [Pages per package](#pages-per-package)
+- [Widget gallery](#widget-gallery)
+
 ## Pages per folder
 
 STATUS: 

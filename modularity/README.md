@@ -98,11 +98,13 @@ TODO: I think there are some handlers in gio core for this ? Check how to maps t
 
 Examples:
 
-There are many permutations of examples of this- way too many to mention. But the following highlights commonalities that effect everyones apps.
+There are many permutations of examples of this; way too many to mention. But the following highlights commonalities that effect everyones apps.
 
 - The Navigation ( aka "Rail" in Materials Design terms: https://material.io/components/navigation-rail) needs to change based on screen size.
 
-  - Video: https://kstatic.googleusercontent.com/files/65115e4274f0fae323a231e4697a04e8be28465d68638f40f1cb32bef51d61f442dd0868e4fac23eaee14d123de32b070e0c59dd291e537d4d9d058d368df514
+  - Video: ![Response Component](https://kstatic.googleusercontent.com/files/65115e4274f0fae323a231e4697a04e8be28465d68638f40f1cb32bef51d61f442dd0868e4fac23eaee14d123de32b070e0c59dd291e537d4d9d058d368df514)
+
+  
 
 - The classic Master / Details pattern ( aka "List/Detail view" in Material Design ) of having a List on the left and a form on the right changes.
 

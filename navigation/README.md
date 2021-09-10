@@ -7,6 +7,15 @@ The following feature matrix make up the whole of that experience.
 
 Each section below is reasonably ordered in that one cant be done unless the previous one is done.
 
+**Table of contents**
+
+- [URL handling](#url-handling)
+- [Deeplinking](#deeplinking)
+- [Universal Links](#universal-links)
+- [Share](#share)
+- [manifests](#manifests)
+- [Providence](#providence)
+
 
 ## URL handling
 

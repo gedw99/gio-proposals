@@ -10,7 +10,7 @@ import (
 
 func main() {
 
-	// Does not support MAC or IOS
+	// Commented out because gio pref does not support MAC or IOS
 	// https://github.com/gioui/gio-x/tree/main/pref/locale
 	// Detect their runtime local
 
@@ -39,12 +39,12 @@ func main() {
 		fmt.Println(langTag.String())
 	}
 
-	// Does not support MAC or IOS
+	// Commented out because gio pref does not support MAC or IOS
 	// https://github.com/gioui/gio-x/tree/main/pref/theme
 	// Detect their theme
 
 	fmt.Println("theme test ... ")
-	themeDarkTag, err := theme.IsDarkMode()
+	themeDark, err := theme.IsDarkMode()
 	if err != nil {
 		// Check if error is a specific type
 		if errors.Is(err, theme.ErrNotAvailableAPI) {
@@ -56,7 +56,7 @@ func main() {
 		}
 	} else {
 		fmt.Println("theme found :)")
-		fmt.Println(themeDarkTag)
+		fmt.Printf("Dark theme set: %v", themeDark)
 	}
 
 }

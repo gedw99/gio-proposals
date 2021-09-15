@@ -102,9 +102,11 @@ There are many permutations of examples of this; way too many to mention. But th
 
 - The Navigation ( aka "Rail" in Materials Design terms: https://material.io/components/navigation-rail) needs to change based on screen size.
 
-  - Video: ![Response Component](https://kstatic.googleusercontent.com/files/65115e4274f0fae323a231e4697a04e8be28465d68638f40f1cb32bef51d61f442dd0868e4fac23eaee14d123de32b070e0c59dd291e537d4d9d058d368df514)
-
+  - Video: 
   
+  ![Response Component](https://kstatic.googleusercontent.com/files/65115e4274f0fae323a231e4697a04e8be28465d68638f40f1cb32bef51d61f442dd0868e4fac23eaee14d123de32b070e0c59dd291e537d4d9d058d368df514)
+
+  [link text](https://example.com/my-link "link title")
 
 - The classic Master / Details pattern ( aka "List/Detail view" in Material Design ) of having a List on the left and a form on the right changes.
 
@@ -197,6 +199,10 @@ Providence:
     - Auth Check: https://github.com/cerbos/demo-rest/blob/main/service/service.go#L95
     - Authz and Permissions: https://github.com/cerbos/demo-rest/blob/main/service/service.go#L167
   - This is a loose coupled design and can be leveraged on the Client and Server or not, which is what we want.
+  - github.com/open-policy-agent/opa based, which is a flexible approach and has long legs.
+    - has WASM support. Pretty cool :) : https://github.com/open-policy-agent/opa/blob/main/features/wasm/wasm.go
+    - has wasmtime-go support too for Servers using WASM rather than dockr for example.
+    - compiling a policy to wasm doesn't depend on any of wasmtime-go, Good !
 
 ## Bus
 

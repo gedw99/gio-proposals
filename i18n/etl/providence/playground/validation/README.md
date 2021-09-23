@@ -1,0 +1,1 @@
+https://github.com/go-playground/validator/blob/master/_examples/translations/main.go

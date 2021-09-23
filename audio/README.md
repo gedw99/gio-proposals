@@ -19,7 +19,7 @@ Use cases are:
 
 - Picking via remote server
   - Show a genre textbox or tag cloud to allow the user to select a genre. 
-    - Use: Reflect on the genes available at https://unsplash.com/collections/1612951/audio
+    - Use: Reflect on the genes available at https://studio.youtube.com/channel/UCWlJ_oTDb9KO5v5klH2eRIQ/music
      - Pick one or many genres
   - Call out to third party for audio files that match the genres represented as URLS. 
   - Display the URL results.

@@ -16,6 +16,37 @@ Each section below is reasonably ordered in that one cant be done unless the pre
 - [Share](#share)
 - [Providence](#providence)
 
+## Example Use case
+
+
+Here is a typical use case to frame the proposal.
+
+**The First way**
+
+- A doctor makes an appointment for a patient.
+
+- The system sends the patient a email / cal event . It saves the event in the server dB.
+
+- The server has a cal module with cron looping over so that it can fire a notification to the Patient and Doctor when the appointment occurs. 
+
+later on ...
+
+- The server fires the cal event. The cal event notification fires on the patients device, and contaisn some text with an URL like: https://app.domain.org/seasion?id=x
+
+- The patient clicks the URL and the gio app opens, and checks the deep_linking url and then loads up the session initiation page using the X to pull the data from the server that realtes to session X. X coudl be anything. It coudl even just be a token.
+
+
+**The 2nd way**
+
+Is that on the server the cal event for that patient fires, and the server sends a remote notification via the mobile gateway ( apple or Google ) and on the patients device the notification pop up on on the mobile or desktop and then the same deep linking logic of the First way above occurs.
+
+What I am curious about is how well web notifications work if the user has or has not added the app via A2HS. According to my research it is much more likely to fire IF they are in A2HS.
+
+**Conclusion**
+
+By having the first way and second way, you can cover yourself against the heuristics of  Web Notifcations.
+
+
 ## Manifests
 
 With these features, you also have a fair bit of configuration required in the Manifests that are particular to each compile target.

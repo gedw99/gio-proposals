@@ -9,6 +9,7 @@ Each section below is reasonably ordered in that one cant be done unless the pre
 
 **Table of contents**
 
+- [example](#Example)
 - [manifests](#Manifests)
 - [URL handling](#url-handling)
 - [Deeplinking](#deeplinking)
@@ -16,7 +17,7 @@ Each section below is reasonably ordered in that one cant be done unless the pre
 - [Share](#share)
 - [Providence](#providence)
 
-## Example Use case
+## Example
 
 
 Here is a typical use case to frame the proposal.

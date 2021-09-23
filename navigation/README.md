@@ -1,7 +1,7 @@
 # Navigation
 
 
-Gio Router ( https://github.com/gioui/gio/tree/main/io/router ) and GIO X Component ( gioui.org/x/component) provide the basis, but we dont have the other things needed to build compelling apps.
+Gio Router ( https://github.com/gioui/gio/tree/main/io/router ) and Gio Component ( https://github.com/gioui/gio-x/tree/main/component) provide the basis, but we dont have the other things needed to build compelling apps.
 
 The following feature matrix make up the whole of that experience.
 

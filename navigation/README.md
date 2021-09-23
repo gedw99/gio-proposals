@@ -9,15 +9,15 @@ Each section below is reasonably ordered in that one cant be done unless the pre
 
 **Table of contents**
 
-- [example](#Example)
-- [manifests](#Manifests)
+- [Example use case](#example-use-case)
+- [Manifests](#manifests)
 - [URL handling](#url-handling)
 - [Deeplinking](#deeplinking)
 - [Universal Links](#universal-links)
 - [Share](#share)
 - [Providence](#providence)
 
-## Example
+## Example use case
 
 
 Here is a typical use case to frame the proposal.
@@ -55,7 +55,6 @@ With these features, you also have a fair bit of configuration required in the M
 For Web a Service work manifest is needed.
 
 For Desktop and Mobile the Manifests need to have the needed items.
-
 
 
 ## URL handling
